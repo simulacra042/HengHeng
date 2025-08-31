@@ -38,9 +38,9 @@ a<!DOCTYPE html>
 <main>
 <section class="section section--tours" id="tours">
 <h2 class="section__title">Popular Tours</h2>
-<div class="cards">
+<div class="carousel" data-carousel="tours"><div aria-label="Available Tours" aria-roledescription="carousel" class="cards carousel__viewport" role="region">
 <!-- Bokor Half-Day -->
-<article class="card">
+<article class="card carousel__slide" role="group">
 <div class="card__body">
 <div class="card__head"><span class="card__iconwrap"><img alt="Bokor church icon" class="card__icon" src="/images/church.png"/></span><div class="card__titlewrap"><h3 class="card__title">Bokor Mountain</h3><span class="chip-badge">Half Day</span></div></div><p class="card__intro">Visit the famous Bokor Mountain’s to see the famous historical sites that date back to the time of the French, as well as the stunning views from the mountain top.</p>
 <p class="card__label">Visit will include:</p><div class="card__accordion"><details class="acc"><summary>Lok Yeay Mao statue</summary><p>29‑meter monument on Bokor Mountain honoring Yeay Mao, a <i>Neak Ta</i> guradian figure revered by locals.</p></details><details class="acc"><summary>Black Palace (Damnak Sla Khmao)</summary><p>Royal retreat from the late 1930s; weathered hilltop ruins with sweeping views.</p></details><details class="acc"><summary>Popokvil Waterfall</summary><p>Two‑tier cascade in Bokor National Park; especially misty and scenic in the rainy season.</p></details><details class="acc"><summary>Wat Sampov Pram (Five Boats Pagoda)</summary><p>Hilltop Buddhist pagoda named for five boat‑shaped rock formations; founded in the 1920s.</p></details><details class="acc"><summary>Old French Church (Bokor Church)</summary><p>Stone Romanesque‑style Catholic church built in the 1920s at Bokor Hill Station; an atmospheric icon.</p></details></div><div class="pricebox"><div class="price-row"><span class="amount">$30</span><span class="note">(1 guest)</span></div><div class="price-row"><span class="amount">$25</span><span class="note">per person (2–3 guests)</span></div><div class="price-meta">Max 3</div></div><div class="card__cta">
@@ -48,7 +48,7 @@ a<!DOCTYPE html>
 </div></div>
 </article>
 <!-- Bokor Full-Day Upgrade -->
-<article class="card">
+<article class="card carousel__slide" role="group">
 <div class="card__body">
 <div class="card__head"><span class="card__iconwrap"><img alt="Pepper farm icon" class="card__icon" src="/images/pepper.png"/></span><div class="card__titlewrap"><h3 class="card__title">Bokor Mountain</h3><span class="chip-badge">Full Day</span></div></div><p class="card__intro">Upgrade the Bokor tour to a full day to see the countryside highlights of Kampot, including our famous pepper farms, caves, salt fields and more!</p>
 <p class="card__note">~8 hours (8:30–16:30). Classic tuktuk.</p>
@@ -57,7 +57,7 @@ a<!DOCTYPE html>
 </div></div>
 </article>
 <!-- Kep Excursion -->
-<article class="card">
+<article class="card carousel__slide" role="group">
 <div class="card__body">
 <div class="card__head"><span class="card__iconwrap"><img alt="Crab icon" class="card__icon" src="/images/crab.png"/></span><div class="card__titlewrap"><h3 class="card__title">Kep Excursion</h3><span class="chip-badge">Day Trip</span></div></div><p class="card__intro">Explore Kampot Provinces seaside, with a visit to try our famous crab with fresh pepper, Kep Beach, as well as Kep's national park.</p><p class="card__label">Highlights:</p><div class="card__accordion"><details class="acc"><summary>Highlight 1</summary><p>Short description text about this highlight.</p></details><details class="acc"><summary>Highlight 2</summary><p>Short description text about this highlight.</p></details><details class="acc"><summary>Highlight 3</summary><p>Short description text about this highlight.</p></details></div><div class="pricebox"><div class="price-row"><span class="amount">$20</span><span class="note">per person</span></div></div>
 <div class="card__cta">
@@ -65,7 +65,7 @@ a<!DOCTYPE html>
 </div></div>
 </article>
 <!-- Sunset Cruise -->
-<article class="card">
+<article class="card carousel__slide" role="group">
 <div class="card__body">
 <div class="card__head"><span class="card__iconwrap"><img alt="Sunset icon" class="card__icon" src="/images/sunset.png"/></span><div class="card__titlewrap"><h3 class="card__title">Sunset Cruise – Kampot River</h3><span class="chip-badge">Sunset</span></div></div><p class="card__intro">Unwind on a private boat down the Kampot River to view the sunset.</p><p class="card__label">Highlights:</p><div class="card__accordion"><details class="acc"><summary>Highlight 1</summary><p>Short description text about this highlight.</p></details><details class="acc"><summary>Highlight 2</summary><p>Short description text about this highlight.</p></details><details class="acc"><summary>Highlight 3</summary><p>Short description text about this highlight.</p></details></div><div class="pricebox"><div class="price-row"><span class="amount">$35</span><span class="note">per boat / hour</span></div></div>
 <div class="card__cta">
@@ -73,16 +73,15 @@ a<!DOCTYPE html>
 </div></div>
 </article>
 <!-- Kayaking -->
-<article class="card">
+<article class="card carousel__slide" role="group">
 <div class="card__body">
 <div class="card__head"><span class="card__iconwrap"><img alt="Kayak icon" class="card__icon" src="/images/kayak.png"/></span><div class="card__titlewrap"><h3 class="card__title">Kayaking – Green Cathedral</h3><span class="chip-badge">2 Hours</span></div></div><p class="card__intro">Take a kayaking trip through Kampot's famous Green Cathedral.</p><p class="card__label">Highlights:</p><div class="card__accordion"><details class="acc"><summary>Highlight 1</summary><p>Short description text about this highlight.</p></details><details class="acc"><summary>Highlight 2</summary><p>Short description text about this highlight.</p></details><details class="acc"><summary>Highlight 3</summary><p>Short description text about this highlight.</p></details></div><div class="pricebox"><div class="price-row"><span class="amount">$25</span><span class="note">solo</span></div><div class="price-row"><span class="amount">$20</span><span class="note">per person after</span></div></div>
 <div class="card__cta">
 <a class="btn btn--primary btn--availability" href="#contact">Check Availability</a>
 </div></div>
 </article>
-</div>
+</div><button aria-label="Previous slide" class="carousel__btn carousel__btn--prev" type="button">‹</button><button aria-label="Next slide" class="carousel__btn carousel__btn--next" type="button">›</button><div aria-label="Slide navigation" class="carousel__dots" role="tablist"></div></div>
 </section>
-
 <section class="section section--contact" id="contact">
 <h2 class="section__title">Contact &amp; Booking</h2>
 <p>Message me directly to check availability and book. Please include your preferred date, tour, and number of guests.</p>

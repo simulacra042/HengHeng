@@ -502,3 +502,66 @@ section[id]{ scroll-margin-top: var(--header-h); }
   .section--about-top{ padding: 18px 0 20px; }
   .section--about-top p{ font-size: .98rem; }
 }
+
+/* === Carousel (CSS Scroll Snap + light JS) — 2025-08-31 === */
+.carousel{
+  position: relative;
+}
+/* Viewport turns into horizontal scroller on <=1024px */
+@media (max-width:1024px){
+  .carousel__viewport{
+    display: flex !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-inline: 16px;
+    scroll-padding-inline: 16px;
+  }
+  .carousel__viewport::-webkit-scrollbar{ display:none; }
+  .carousel__slide{
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  /* Nav buttons */
+  .carousel__btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: 0;
+    border-radius: 999px;
+    width: 36px; height: 36px;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    display: grid; place-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .carousel__btn--prev{ left: 6px; }
+  .carousel__btn--next{ right: 6px; }
+  /* Hide buttons if not enough slides */
+  .carousel:not(.is-multi) .carousel__btn{ display: none; }
+
+  /* Dots */
+  .carousel__dots{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0 0;
+  }
+  .carousel__dots button{
+    width: 8px; height: 8px; border-radius: 999px;
+    border: 0;
+    background: rgba(0,0,0,.25);
+  }
+  .carousel__dots button[aria-selected="true"]{ background: rgba(0,0,0,.75); }
+}
+
+/* Desktop keeps your existing grid; buttons/dots hidden */
+@media (min-width:1025px){
+  .carousel__btn, .carousel__dots{ display: none !important; }
+}
