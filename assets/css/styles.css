@@ -307,3 +307,22 @@ h3{font-size:1.25rem}
 @media (min-width:700px){
   .card__title{ font-size:1.3rem; }
 }
+
+/* === Icon style update: remove green circle, enlarge icons === */
+.card__head{ grid-template-columns: auto 1fr; } /* allow icon to size naturally */
+.card__iconwrap{
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: auto; height: auto;
+  padding: 0;
+  display: grid; place-items: center;
+}
+.card__icon{
+  width: 72px; height: 72px; /* larger icon on mobile */
+  object-fit: contain;
+}
+@media (min-width:700px){
+  .card__icon{ width: 80px; height: 80px; }
+}
