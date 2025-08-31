@@ -40,3 +40,12 @@ document.querySelectorAll('.card__accordion').forEach(acc => {
     });
   });
 });
+
+// Sticky header shadow on scroll (minimal)
+(function(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 0);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
