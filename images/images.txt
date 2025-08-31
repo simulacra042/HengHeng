@@ -1,0 +1,19 @@
+ Volume in drive D is DATA
+ Volume Serial Number is 0433-CDCD
+
+ Directory of D:\Website\HengHeng\HengHeng\images
+
+08/31/2025  11:10 AM    <DIR>          .
+08/31/2025  11:10 AM    <DIR>          ..
+08/31/2025  08:48 AM           188,463 boat1.jpg
+08/31/2025  08:55 AM           188,712 bokor1.jpg
+08/31/2025  08:59 AM           244,412 church1.jpg
+08/31/2025  08:42 AM           304,205 customers1.jpg
+08/31/2025  08:45 AM           205,545 customers2.jpg
+08/31/2025  08:59 AM           174,627 customers3.jpg
+08/31/2025  11:10 AM                 0 images.txt
+08/31/2025  08:43 AM           249,894 kayak1.jpg
+08/31/2025  08:46 AM           210,763 pepper1.jpg
+08/31/2025  08:59 AM           110,057 waterfall1.jpg
+              10 File(s)      1,876,678 bytes
+               2 Dir(s)  99,954,761,728 bytes free
