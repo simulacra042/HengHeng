@@ -28,3 +28,15 @@
     });
   }
 })();
+
+// Single-open behavior for card accordions
+document.querySelectorAll('.card__accordion').forEach(acc => {
+  const items = acc.querySelectorAll('details.acc');
+  items.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        items.forEach(other => { if (other !== d) other.open = false; });
+      }
+    });
+  });
+});
