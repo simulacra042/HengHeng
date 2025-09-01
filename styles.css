@@ -85,7 +85,7 @@ a:hover{opacity:.9}
 .carousel-wrap{ position:relative }
 .carousel{
   display:grid; grid-auto-flow:column; grid-auto-columns: minmax(280px, 360px);
-  gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding: .6rem 2.4rem .6rem .6rem;
+  gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding: .6rem .6rem;
   scrollbar-width:thin
 }
 .carousel::-webkit-scrollbar{height:10px}
@@ -194,3 +194,30 @@ details p{ color:var(--muted); margin:.4rem 0 .2rem }
   display: block;
   margin: 0 auto 1.5rem auto;
 }
+
+.carousel-btn{ display:none !important; }
+
+/* === Card Price: Leaf Pill (Option 2) === */
+.card { display:flex; flex-direction:column; }
+.price-area{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.35rem;
+}
+.price-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.6rem .9rem;
+  color:#fff;
+  background: linear-gradient(135deg, var(--leaf), var(--leaf-2));
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+.leaf-icon svg{ width:18px; height:18px; opacity:.95; display:block }
+.price-stack{ display:flex; flex-direction:column; line-height:1.05 }
+.price-main{ font-weight:800; font-size: clamp(1.2rem, 2.2vw, 1.6rem) }
+.price-sub{ font-size:.85rem; opacity:.9 }
+.price-note{ color: var(--muted); font-size:.95rem; margin:0; text-align:center }

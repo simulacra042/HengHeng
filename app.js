@@ -17,10 +17,8 @@ function updateDots(){
 updateDots();
 carousel.addEventListener('scroll', () => requestAnimationFrame(updateDots));
 
-document.getElementById('prevBtn').addEventListener('click', () => {
   carousel.scrollBy({ left: -(carousel.clientWidth * 0.9), behavior: 'smooth' });
 });
-document.getElementById('nextBtn').addEventListener('click', () => {
   carousel.scrollBy({ left: (carousel.clientWidth * 0.9), behavior: 'smooth' });
 });
 
