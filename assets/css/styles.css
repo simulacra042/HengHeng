@@ -454,35 +454,7 @@ section[id]{ scroll-margin-top: var(--header-h); }
   text-rendering: optimizeLegibility;
 }
 
-/* === Mobile Card Tightening + Single CTA (2025-08-31) === */
-.btn--availability { letter-spacing: .1px; }
-
-@media (max-width:480px){
-  /* Full-width button for easy tapping */
-  .card__cta .btn--availability{ width:100%; padding:12px 14px; }
-
-  /* Clamp card intros to ~3 lines */
-  .card__intro{
-    margin:.25rem 0 .35rem;
-    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
-    overflow:hidden;
-  }
-
-  /* Subtle tightening so CTAs sit higher on phones */
-  .cards{ gap:12px; }
-  .card__body{ padding:12px; gap:.5rem; }
-  .card__head{ grid-template-columns:44px 1fr; gap:.5rem; }
-  .card__iconwrap{ width:44px; height:44px; }
-  .card .card__title{ font-size:1.1rem; line-height:1.15; }
-  .card__accordion{ gap:.35rem; margin:.35rem 0 .6rem; }
-  .acc{ padding:.4rem .6rem; border-radius:10px; }
-  .card__cta{ gap:8px; }
-}
-
-/* Keep label consistent visually */
-.card__label{ margin:.2rem 0; font-weight:600; }
-
-/* === About Me top section (2025-08-31) === */
+/* === About Me top section (moved after header) — 2025-09-01 === */
 .section--about-top{
   background: var(--surface-50, #fafafa);
   border-block: 1px solid rgba(0,0,0,.06);
@@ -503,10 +475,15 @@ section[id]{ scroll-margin-top: var(--header-h); }
   .section--about-top p{ font-size: .98rem; }
 }
 
-/* === Carousel (CSS Scroll Snap + light JS) — 2025-08-31 === */
-.carousel{
-  position: relative;
+/* === Single CTA: Check Availability — 2025-09-01 === */
+.btn--availability { letter-spacing: .1px; }
+@media (max-width:480px){
+  .card__cta .btn--availability{ width:100%; padding:12px 14px; }
 }
+
+/* === Carousel (CSS Scroll Snap + light JS) — 2025-09-01 === */
+.carousel{ position: relative; }
+
 /* Viewport turns into horizontal scroller on <=1024px */
 @media (max-width:1024px){
   .carousel__viewport{
@@ -524,6 +501,7 @@ section[id]{ scroll-margin-top: var(--header-h); }
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
+
   /* Nav buttons */
   .carousel__btn{
     position: absolute;
@@ -543,6 +521,7 @@ section[id]{ scroll-margin-top: var(--header-h); }
   }
   .carousel__btn--prev{ left: 6px; }
   .carousel__btn--next{ right: 6px; }
+
   /* Hide buttons if not enough slides */
   .carousel:not(.is-multi) .carousel__btn{ display: none; }
 
@@ -564,4 +543,65 @@ section[id]{ scroll-margin-top: var(--header-h); }
 /* Desktop keeps your existing grid; buttons/dots hidden */
 @media (min-width:1025px){
   .carousel__btn, .carousel__dots{ display: none !important; }
+}
+
+/* === Card Tightening Adjustments — 2025-09-01 === */
+@media (max-width:1024px){
+  .card__body{ padding:10px; gap:.4rem; }
+  .card__head{ margin-bottom:.2rem; }
+  .card__intro{ margin:.2rem 0 .3rem; }
+  .card__title{ font-size:1rem; }
+  .card__subhead{ font-size:.85rem; opacity:.8; }
+  .card__label{ font-size:.8rem; letter-spacing:.5px; text-transform:uppercase; }
+  .acc{ padding:.35rem .5rem; }
+  .pricebox, .priceblock{ margin:.1rem 0 .2rem; }
+  .card__cta{ margin-top:auto; gap:6px; }
+  .card__iconwrap{ width:36px; height:36px; }
+}
+
+/* === No-Truncation Overrides — 2025-09-01 === */
+/* Ensure intros and any clamped text show fully with natural wrapping */
+.card__intro,
+[class*="clamp"],
+.line-clamp,
+[data-line-clamp]{
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  max-height: none !important;
+}
+
+/* Robust wrapping for long words/URLs to prevent layout breakage */
+.card__intro, .card, .carousel__slide, .section--about-top p, .pricebox, .acc, .acc *{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Carousel: ensure variable-height slides expand correctly */
+@media (max-width:1024px){
+  .carousel__viewport{ align-items: stretch !important; }
+  .carousel__slide{ height: auto !important; }
+}
+
+/* === Compact header for mobile/tablet landscape & short screens — 2025-09-01 === */
+@media ( (max-width:1024px) and (orientation: landscape) ), (max-height:480px) {
+  .hero__inner--header{
+    grid-template-columns: 1fr;
+    gap: .4rem;
+    padding: .5rem 0;
+  }
+  .hero__photo{ display: none; }
+  .hero__title{
+    margin: 0;
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
+    text-shadow: none;
+  }
+  .hero__icons{ margin-top: .25rem; gap: .4rem; }
+  .hero__ic{ width: 40px; height: 40px; }
+  .hero__divider{ display: none; }
+}
+@media (max-height:480px){
+  .hero{ min-height: 30svh; }
 }
