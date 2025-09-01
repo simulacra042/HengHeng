@@ -138,7 +138,7 @@ details p{ color:var(--muted); margin:.4rem 0 .2rem }
 
 /* Contact */
 .contact{ padding: 3rem 0 4rem; background:linear-gradient(180deg, #0b1a13, #0a1711) }
-.contact-grid{ display:grid; gap:1.2rem; grid-template-columns: 1.1fr .9fr; align-items:center }
+.contact-grid{ display:flex; justify-content:center; }
 .contact-list{ list-style:none; padding:0; margin:1rem 0; display:flex; gap:.6rem }
 .contact-chip{
   display:inline-flex; align-items:center; gap:.5rem;
@@ -159,7 +159,7 @@ details p{ color:var(--muted); margin:.4rem 0 .2rem }
 /* Responsive */
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns: 1fr; }
-  .contact-grid{ grid-template-columns: 1fr; }
+  .contact-grid{ display:flex; justify-content:center; }
   .carousel-btn.prev{ left:2px } .carousel-btn.next{ right:2px }
 }
 
@@ -221,3 +221,107 @@ details p{ color:var(--muted); margin:.4rem 0 .2rem }
 .price-main{ font-weight:800; font-size: clamp(1.2rem, 2.2vw, 1.6rem) }
 .price-sub{ font-size:.85rem; opacity:.9 }
 .price-note{ color: var(--muted); font-size:.95rem; margin:0; text-align:center }
+
+
+/* Enhanced Contact Section */
+.contact .lead {
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-photo {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 0.8rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  font-size: .95rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.contact-chip.whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+.contact-chip.telegram {
+  background: #0088cc;
+  color: #fff;
+}
+.contact-chip.whatsapp img,
+.contact-chip.telegram img {
+  filter: invert(1);
+}
+
+/* --- Contact section upgrades --- */
+.lead{
+  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.4vw, 1.15rem);
+  margin-top: .2rem;
+}
+
+.contact-btn{
+  display:inline-flex; align-items:center; gap:.6rem;
+  padding:.85rem 1.1rem; border-radius:16px;
+  text-decoration:none; font-weight:800;
+  background: linear-gradient(135deg, var(--leaf), var(--leaf-2));
+  color:#fff; border:1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow);
+  transform: translateZ(0);
+  transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.contact-btn:hover{ transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,.4) }
+
+/* make the icons a touch larger inside buttons */
+.contact-btn img{ width:20px; height:20px; opacity:.95 }
+
+/* reassurance badges */
+.reassure-list{
+  list-style:none; padding:0; margin:.6rem 0 0 0;
+  display:flex; flex-wrap:wrap; gap:.5rem .8rem;
+  color:var(--muted); font-weight:700;
+}
+.reassure-list li{ white-space:nowrap }
+
+/* availability line spacing */
+.avail{ margin-top:.2rem }
+
+/* contact photo styling */
+.contact-photo{
+  height:84px; width:84px; object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.15);
+  box-shadow: var(--shadow);
+  margin-bottom:.4rem;
+}
+
+/* --- Contact card actions layout --- */
+.contact-actions{
+  margin-top:.6rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.6rem;
+}
+.contact-actions .contact-list{
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin:.2rem 0;
+}
+.contact-actions .contact-list .contact-btn{ width:auto }
+.contact-actions p{ text-align:center; }
+
+@media (max-width: 900px){
+  .contact-card{ margin-top:.6rem }
+}
+
