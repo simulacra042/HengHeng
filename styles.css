@@ -1,0 +1,196 @@
+/* Mr. Heng • Kampot TukTuk Tours
+   Jungle green / nature palette
+*/
+:root{
+  --bg:#0f2419;
+  --bg-soft:#113322;
+  --card:#10281c;
+  --leaf:#1b5e2f;
+  --leaf-2:#2e7d32;
+  --text:#e6f4ea;
+  --muted:#b9d4c0;
+  --accent:#9bd17c;
+  --accent-2:#b7e4a0;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  background:linear-gradient(180deg,var(--bg) 0%, #0b1a13 100%);
+  color:var(--text);
+}
+
+.container{width:min(1100px,92%);margin-inline:auto}
+
+a{color:var(--accent)}
+a:hover{opacity:.9}
+
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(15,36,25,.7); backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:.6rem 0}
+.logo{height:48px; width:auto}
+.site-nav a{margin-left:1rem; text-decoration:none; font-weight:600}
+
+.hero{
+  position:relative; overflow:hidden;
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+.hero-grid{
+  display:grid; gap:2rem; align-items:center;
+  grid-template-columns: 1.2fr .8fr;
+}
+.hero-text h1{font-size: clamp(2rem, 3.8vw, 3.2rem); line-height:1.1; margin:.2rem 0 1rem}
+.hero-text h1 span{color:var(--accent)}
+.hero-text p{color:var(--muted); font-size:1.05rem}
+.hero-cta{display:flex; gap:.8rem; margin-top:1.2rem}
+.btn{
+  display:inline-block; padding:.8rem 1rem; border-radius:14px; text-decoration:none; font-weight:700;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow);
+}
+.btn-primary{ background:linear-gradient(135deg,var(--leaf),var(--leaf-2)); color:white }
+.btn-ghost{ background:transparent; color:var(--text) }
+.tuktuk-mark{height:28px; opacity:.7; margin-bottom:.4rem}
+
+.hero-image img{
+  width:100%; height:auto; display:block; border-radius:20px;
+  box-shadow: var(--shadow);
+  border:1px solid rgba(255,255,255,.08);
+  background:#0a1711;
+  padding:1rem;
+}
+
+.leafy-bg{
+  position:absolute; inset:auto 0 0 0; height:180px; z-index:-1;
+  background:
+    radial-gradient(120px 80px at 10% 40%, rgba(155,209,124,.2), transparent 60%),
+    radial-gradient(160px 120px at 90% 60%, rgba(183,228,160,.18), transparent 60%),
+    radial-gradient(300px 140px at 60% 10%, rgba(27,94,47,.25), transparent 60%);
+  filter: blur(10px);
+}
+
+/* Tours section */
+.tours{ padding: clamp(2rem, 6vw, 4rem) 0 4rem }
+.section-head h2{font-size:2rem; margin:0}
+.section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:1rem }
+
+.carousel-wrap{ position:relative }
+.carousel{
+  display:grid; grid-auto-flow:column; grid-auto-columns: minmax(280px, 360px);
+  gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding: .6rem 2.4rem .6rem .6rem;
+  scrollbar-width:thin
+}
+.carousel::-webkit-scrollbar{height:10px}
+.carousel::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.12); border-radius:999px }
+
+.carousel-btn{
+  position:absolute; top:50%; transform: translateY(-50%);
+  border:none; width:42px; height:42px; border-radius:50%;
+  background:rgba(255,255,255,.1); color:var(--text); font-size:24px; cursor:pointer;
+  display:grid; place-items:center; box-shadow: var(--shadow);
+}
+.carousel-btn:hover{ background:rgba(255,255,255,.18) }
+.carousel-btn.prev{ left:-8px }
+.carousel-btn.next{ right:-8px }
+
+.carousel-dots{ display:flex; gap:.4rem; justify-content:center; margin-top:.6rem }
+.carousel-dots button{
+  width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,.2)
+}
+.carousel-dots button.active{ background:var(--accent) }
+
+.card{
+  scroll-snap-align:start;
+  background: linear-gradient(180deg, var(--card), #0d1f17);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px; padding:1rem; display:flex; flex-direction:column; gap:.6rem;
+  box-shadow: var(--shadow);
+  min-height: 380px;
+}
+.card-header{
+  display:grid; grid-template-columns: 64px 1fr; gap:.8rem; align-items:center;
+  border-bottom:1px dashed rgba(255,255,255,.08); padding-bottom:.6rem; margin-bottom:.2rem
+}
+.card-header img.icon{ width:64px; height:64px; object-fit:contain }
+.card-header .title{ font-size:1.1rem; margin:0; line-height:1.2 }
+.card-header .subtitle{ color:var(--muted); font-size:.95rem; margin-top:.2rem }
+.badges{ display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.4rem }
+.badge{ font-size:.8rem; padding:.2rem .5rem; border-radius:999px; background:rgba(183,228,160,.12); border:1px solid rgba(183,228,160,.25) }
+
+.accordion{ margin-top:.4rem; display:flex; flex-direction:column; gap:.4rem }
+details{
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:.4rem .6rem;
+}
+summary{ cursor:pointer; font-weight:600; list-style:none }
+summary::-webkit-details-marker{ display:none }
+details p{ color:var(--muted); margin:.4rem 0 .2rem }
+
+/* Contact */
+.contact{ padding: 3rem 0 4rem; background:linear-gradient(180deg, #0b1a13, #0a1711) }
+.contact-grid{ display:grid; gap:1.2rem; grid-template-columns: 1.1fr .9fr; align-items:center }
+.contact-list{ list-style:none; padding:0; margin:1rem 0; display:flex; gap:.6rem }
+.contact-chip{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.6rem .9rem; border-radius:14px; text-decoration:none; font-weight:700;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+}
+.contact-chip img{ width:18px; opacity:.8 }
+
+.contact-card{
+  background: linear-gradient(180deg, var(--card), #0d1f17);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px; padding:1.2rem; text-align:center; box-shadow: var(--shadow);
+}
+.contact-logo{ height:48px; opacity:.85 }
+.site-footer{ padding:1.2rem 0; border-top:1px solid rgba(255,255,255,.06); background:#0a1711 }
+.site-footer p{ margin:0; color:var(--muted); text-align:center }
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .carousel-btn.prev{ left:2px } .carousel-btn.next{ right:2px }
+}
+
+
+.hero-logo {
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  width: 200px;   /* larger size */
+  height: auto;
+}
+
+
+/* === Option A: Single-column, centered hero === */
+.hero-grid{
+  grid-template-columns: 1fr !important;
+}
+.hero-text{
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.hero-cta{
+  justify-content: center;
+}
+.hero-text p{
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-logo{
+  width: clamp(320px, 50vw, 800px);
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+}
